@@ -1,9 +1,21 @@
-import { Button } from "@/components/ui/button";
+import { Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import Login from "@/pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
 
 export default function App() {
   return (
-    <div className="text-green-400">
-      App <Button>Hello world</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/login"
+        element={
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        }
+      />
+    </Routes>
   );
 }
