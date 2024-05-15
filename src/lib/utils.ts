@@ -26,7 +26,7 @@ export const requestHandler = async (
     if ([401, 403].includes(error?.response.data?.statusCode)) {
       // handle unauthorized or forbidden
       LocalStorage.clear();
-      if (isBrowser) window.location.href = "/login";
+      // if (isBrowser) window.location.href = "/login";
     }
     onError(error?.response.data?.message || "Something went wrong");
   } finally {
