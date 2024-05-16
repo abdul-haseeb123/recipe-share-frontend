@@ -96,6 +96,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   // check for saved user and token in local storage during component mount
   useEffect(() => {
     setIsLoading(true);
+
     const _token = LocalStorage.get("token");
     const _user = LocalStorage.get("user");
     if (_token && _user?._id) {

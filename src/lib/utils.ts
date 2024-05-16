@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { AxiosResponse } from "axios";
 import { ApiResponse } from "@/interfaces/api";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -70,3 +71,9 @@ export class LocalStorage {
     localStorage.clear();
   }
 }
+
+export const cld = new Cloudinary({
+  cloud: {
+    cloudName: "dn7uk2uqo",
+  },
+});
